@@ -30,7 +30,7 @@ def eliminar(id):
     cursor = con_bd.cursor()
     sql = """
             DELETE FROM personas WHERE id=%s;"""
-    cursor.execute(sql,(id))
+    cursor.execute(sql,(id,))
     return redirect(url_for('index'))
 
 @app.route('/guardar_personas', methods=['POST'])
